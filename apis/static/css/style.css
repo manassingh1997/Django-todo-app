@@ -8,7 +8,7 @@ html {
 
 body { 
     font-family: Arial, sans-serif; padding : 20px;
-    background-color: #200B0B;
+    background-color: #133E87;
     color: #FFCDCD;
 }
 
@@ -52,7 +52,7 @@ h1 {
     list-style-type: none;
     padding: 0;
     width: 80%;
-    height: 80%; /* Limit the height */
+    height: 70%; /* Limit the height */
     overflow-y: auto; /* Vertical scroll bar*/
     margin: 0 auto 0 auto;
     
@@ -81,23 +81,38 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    margin: 5px 3px;
+   margin-bottom: 5px;
 }
 
-#todo-list li button { 
+#todo-list li > div {
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
+}
+.text-content {
+    flex: 1;
+    min-width: 0;
+    padding-right: 10px;
+}
+
+#todo-list li div button { 
     
     background-color: red;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 6px;
     font-size: 12px;
     cursor: pointer;
-    margin-left: 3%;
+    margin-right:5px;
+    overflow: hidden;
 }
+
+
 
 /* Adding new TODO */
 
@@ -160,7 +175,7 @@ h1 {
 @media screen and (max-width: 900px){
     body {
         font-family: Arial, sans-serif; padding : 20px;
-        background-color: #200B0B;
+        background-color: #133E87;
         color: #FFCDCD;
     }
     .todo-grid {
