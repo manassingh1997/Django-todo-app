@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block start %}
+<div class="login_form">
+    <form method="POST" class="login_form">
+        <h2>Time to see your tasK</h2>
+        {% csrf_token %}
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <input type="text" required name="email" placeholder="Enter email">
+        <input type="password" required name="password" placeholder="Enter password">
+        <button type="submit">Login</button>
+    </form>
+</div>
+{% endblock %}

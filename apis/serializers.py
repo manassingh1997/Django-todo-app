@@ -6,6 +6,7 @@ class TodoSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "title",
-            "description"
+            "due_date",
+            "description",
         )
         model = models.Todo

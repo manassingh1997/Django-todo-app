@@ -1,18 +1,79 @@
-html {
+html,body{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
 
 *,*:before,*:after {
-    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body { 
     font-family: Arial, sans-serif; padding : 20px;
     background-color: #133E87;
     color: #FFCDCD;
+    
 }
 
+/* Navigation Bar*/
 
+
+.nav{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:  #FBFBFB;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.nav h2{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 15px;
+    padding: 5px;
+    font-family: 'Dancing Script', sans-serif;
+}
+
+.nav h2 a{
+    text-decoration: none;
+}
+.nav h2 a:hover{
+    color: #F95454
+}
+
+.nav ul{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav ul li{
+    padding: 5px 10px;
+    margin: 5px;
+    list-style-type: none;
+    border: 2px solid #1e1299;
+    border-radius: 5px;
+    background-color: #133E87;
+    cursor: pointer;
+    
+}
+.nav ul li:hover{
+    background-color:#F95454;
+}
+
+.nav ul li a{
+    text-decoration: none;
+    color: #FFFCF0;
+}
+
+/* Heading of TODO LIST*/
 h1 {
     text-align: center;
     margin-top: -5px;
@@ -26,7 +87,7 @@ h1 {
 }
 
 .todo-grid-item{
-    flex: 1
+    flex: 1;
     padding: 1em;
     margin: 1em;
 }
@@ -39,13 +100,17 @@ h1 {
     
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 80vh;
     overflow: hidden;
     width: 50%;
     margin-bottom: 2em;
+    margin-top:30px;
     border-radius: 30px;
     box-shadow: 10px 10px 2px lightblue;
     padding: 20px;
+}
+.add_new{
+    height: 50vh;
 }
 
 #todo-list {
@@ -86,6 +151,7 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 8px;
    margin-bottom: 5px;
+   text-align: justify;
 }
 
 #todo-list li > div {
@@ -95,7 +161,7 @@ h1 {
 }
 .text-content {
     flex: 1;
-    min-width: 0;
+    
     padding-right: 10px;
 }
 
@@ -181,6 +247,7 @@ h1 {
     .todo-grid {
         display: block;
         width: 100%;
+        margin-top: 50px;
     }
     .todo-grid-item{
         width: 80%;
@@ -211,4 +278,172 @@ h1 {
         padding-top: 3px;
         margin-top: 3px;
     }
+}
+
+
+/* Login Form amd Register Form*/
+
+.login_form , .register_form{
+    position: relative;
+    z-index : 10;
+    width: 80%;
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.login_form h2, .register_form h2{
+    color: #133E87;
+    text-align: center;
+    font-size: 1.7rem;
+    margin-top: -45px;
+    margin-bottom: 30px;
+}
+.login_form form , .register_form form{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login_form form input , .register_form form input{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    height: 2.5rem;
+    padding: 5px;
+}
+
+input::placeholder {
+    color: #888; /* Change the text color of the placeholder */
+    font-style: italic; /* Italicize the placeholder text */
+    font-size: 16px; /* Adjust the font size of the placeholder */
+    opacity: 1; /* Make sure the placeholder text is visible at full opacity */
+}
+
+.login_form form input:focus , .register_form form input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.login_form form button , .register_form form button{
+    display: block;
+    width: 100%;
+    margin: 10px auto 0 auto;
+    background:#133E87;
+    color:#FFFCF0;
+    font-size: 1rem;
+    height: 1.7rem;
+    border-radius: 5px;
+}
+
+.login_form form button:hover , .register_form form button:hover{
+    background-color:#F95454;
+}
+
+/*Login Form Messages*/
+.messages {
+    list-style-type: none;  /* Removes default list styling */
+    margin: 0 0 1rem;  /* Add some margin at the bottom, no top margin */
+    padding: 0;
+}
+
+.messages li {
+    background-color: #ffcc00;  /* Background color for messages */
+    padding: 10px;
+    border-radius: 5px;  /* Rounded corners for a softer look */
+    margin-bottom: 10px;  /* Space between messages */
+    color: #333;  /* Text color */
+    font-weight: bold;  /* Optional: makes the message text bold */
+}
+
+/* Optional: Add different styles based on message tags (e.g., error or success messages) */
+.messages .error {
+    background-color: #ff4d4d; /* Red for error messages */
+    color: white;
+}
+
+.messages .success {
+    background-color: #4caf50; /* Green for success messages */
+    color: white;
+}
+
+
+/* Style for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: #133E87;*/ /* Black w/ opacity */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #ffffffdd;
+    padding: 20px;
+    border-radius: 15px;
+    width: 40%;
+    height: 40%;
+    max-width: 80%;
+    position: relative;
+    text-align: center;
+    color: #133E87;
+}
+
+.model_h2{
+    
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+}
+
+.model_input{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    height: 1.7rem;
+    padding: 5px;
+    font-style: italic;
+    background: none;
+}
+
+
+
+.model_input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.model_btn {
+    display: block;
+    width: 100%;
+    margin: 10px auto 0 auto;
+    background:#133E87;
+    color:#FFFCF0;
+    font-size: 0.9rem;
+    height: 1.7rem;
+    border-radius: 5px;
+}
+
+.model_btn:hover {
+    background-color:#608BC1;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #133E87;
 }
