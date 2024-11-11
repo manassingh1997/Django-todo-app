@@ -2,7 +2,7 @@ databases:
   - name: todo_db
     plan: free
     databaseName: todo_db
-    user: postgres
+    #user: postgres
 
 services:
   - type: web
