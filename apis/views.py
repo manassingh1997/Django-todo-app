@@ -77,7 +77,7 @@ def login_page(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
 
-        todo_user = todoUser.objects.filter(email = email) #creating object for hotel user based on email
+        todo_user = todoUser.objects.filter(email = email) #creating object for user based on email
 
         if not todo_user.exists(): # checking if user exists or not
             messages.warning(request,"Account does not exists please register")
